@@ -5,20 +5,27 @@
 
 * {
   box-sizing: border-box;
+  
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
   background-image: linear-gradient(rgb(95, 40, 40), rgb(206, 49, 49));
   min-height: 100vh;
+  width: 100%;
 }
 
 header {
   padding: 0 20px;
   display: flex;
   justify-content: space-around;
-  gap: 600px;
+  /* gap: 600px; */
+  width: 100%;
   align-items: center;
   background-color: var(--secondary-color);
 }
@@ -53,8 +60,8 @@ header h2 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   padding-top: 20px;
   overflow: hidden;
-  width: 850px;
-  height: 600px;
+  max-width: 1280px;
+  height: 720px;
   margin: 0 auto;
 }
 
@@ -62,11 +69,13 @@ header h2 {
   display: flex;
   transform: translateX(0);
   transition: transform 0.5s ease-in-out;
+  width: 1280px;
+  height: 720px;
 }
 
 .image-container img {
-  width: 850px;
-  height: 600px;
+  width: 1280px;
+  height: 720px;
   object-fit:cover;
 }
 
@@ -75,15 +84,20 @@ header h2 {
   justify-content: space-between;
 }
 
+.angle{
+  width: 40px;
+  height: 40px;
+  display: block;
+  filter: invert();
+}
 
 .flexbutton{
-  position: absolute;
+  position: absolute ;
   display: flex;
-  width: 100%;
-  justify-content: space-around;
-  gap: 1000px;
+  width: 99vw;
+  justify-content: space-between;
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 0;
   color: white;
 
@@ -113,6 +127,19 @@ header h2 {
   position: relative;
   overflow: hidden;
   border-radius: 3px;
+}
+
+.movie button{
+  background-color:rgba(190, 2, 2, 0.871);
+  display: block;
+  border: none;
+  width: 80%;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  margin: 0 auto;
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .movie img {
@@ -148,7 +175,8 @@ header h2 {
 }
 
 .overview {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.857);
+  color: white;
   padding: 2rem;
   position: absolute;
   left: 0;
@@ -167,7 +195,7 @@ header h2 {
 
 #movie-container {
   margin: 20px 0;
-  width: 700px;
+  max-width: 700px;
   margin: auto;
 }
 

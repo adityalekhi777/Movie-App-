@@ -6,12 +6,16 @@ const SEARCH_URL =
 
 getMovies(API_URL);
 
+let global_data = {};
+
 const form = document.getElementById("form");
+
 const main = document.getElementById("main");
 
 async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
+  global_data = data.results;
 
   console.log(data.results);
   showMovie(data.results);
@@ -19,16 +23,16 @@ async function getMovies(url) {
 }
 
 function handler(id) {
-  const url =  `./Booking.html`;
+  const url = `./Booking.html`;
   window.location = url;
-  
-  localStorage.setItem("id",id);
+  console.log();
+  localStorage.setItem("id", JSON.stringify(global_data[id]));
 }
-
+ 
 function showMovie(data) {
   main.innerHTML = null;
-  data.forEach((item) => {
-    const { title, poster_path, vote_average, overview, id } = item;
+  data.forEach((item, index) => {
+    const { title, poster_path, vote_average, overview } = item;
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
 
@@ -44,7 +48,7 @@ function showMovie(data) {
             <div class="overview">
                 <h3>overview</h3>
                 ${overview}
-                <button onclick={handler(this.id)} id="${id}" >Book Seat</button>
+                <button onclick={handler(this.id)} id="${index}" >Book Seat</button>
             </div>
             </div>
         `;
@@ -78,10 +82,8 @@ form.addEventListener("submit", (e) => {
 
 //Image slider
 const imgs = document.getElementById("imgs");
-const leftBtn = document.getElementById("left");
-const rightBtn = document.getElementById("right");
-
-
+const leftBtn = document.querySelector(".left");
+const rightBtn = document.querySelector(".right");
 
 console.log(imgs);
 
@@ -90,47 +92,45 @@ function showSlider(data) {
 
   data.forEach((item) => {
     const { backdrop_path } = item;
-    st += `<img src=${IMG_URL + backdrop_path}></img> `;
+    if (backdrop_path != null) {
+      st += `<img src=${IMG_URL + backdrop_path}></img> `;
+    }
   });
   imgs.innerHTML = st;
   const img = document.querySelectorAll("#imgs img");
 
   let idx = 0;
-  let interval = setInterval(run, 5000);
+  let interval = setInterval(run, 30000);
 
   function run() {
     idx++;
     changeImage();
   }
-  
+
   function changeImage() {
     if (idx > img.length - 1) {
       idx = 0;
     } else if (idx < 0) {
       idx = img.length - 1;
     }
-  
-    imgs.style.transform = `translateX(${-idx * 850}px)`;
+
+    imgs.style.transform = `translateX(${-idx * 1280}px)`;
   }
-  
+
   function resetInterval() {
     clearInterval(interval);
     interval = setInterval(run, 5000);
   }
-  
+
   rightBtn.addEventListener("click", () => {
     idx++;
     changeImage();
     resetInterval();
   });
-  
+
   leftBtn.addEventListener("click", () => {
     idx--;
     changeImage();
     resetInterval();
   });
 }
-
-
-
-

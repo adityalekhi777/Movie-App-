@@ -1,0 +1,30 @@
+.movie_details{
+    max-width: 700px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    color: white;
+    
+}
+
+.details{
+    width: 400px;
+    margin: auto;
+}
+
+.movie_details img{
+    max-width: 30%;
+    margin: auto;
+}
+
+.movie_details .details{
+    align-self: center;
+}
+
+.movie_details .details h3{
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
+}
