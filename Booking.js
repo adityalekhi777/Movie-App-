@@ -12,6 +12,13 @@ function updateCount() {
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * 10;
+  localStorage.setItem("total",selectedSeatsCount * 10)
+}
+
+function goToPayment() {
+  const url = `./Payment.html`;
+  window.location = url;
+
 }
 
 container.addEventListener("click", (e) => {
