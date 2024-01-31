@@ -8,25 +8,41 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <title>Top Movie</title>
   </head>
   <body>
+    <!-- Nabar Section -->
     <header>
       <h2>TopMovie</h2>
       <form id="form">
         <input type="text" id="search" placeholder="search" class="search" />
       </form>
     </header>
+    <!-- Slider Section -->
 
-    <div class="carousel">
+    <!-- <div class="carousel">
       <div class="image-container" id="imgs"></div>
 
       <div class="flexbutton">
-        <img src="./assets/left.svg" alt="" class="left angle"/>
-        <img src="./assets/right.svg" alt="" class="right angle"/>
+        <img src="./assets/left.svg" alt="" class="left angle" />
+        <img src="./assets/right.svg" alt="" class="right angle" />
+      </div>
+    </div> -->
+
+    <div class="swiper">
+      <div id="swiper-1">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
 
+    <!-- Movies Listing Section -->
     <main id="main"></main>
 
     <script src="index.js"></script>
