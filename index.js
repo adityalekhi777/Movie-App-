@@ -171,3 +171,8 @@ function displaySlider(data) {
 //     resetInterval();
 //   });
 // }
+
+
+// Theme Functionality
+
+
