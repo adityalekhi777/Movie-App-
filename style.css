@@ -1,7 +1,11 @@
 :root {
   --primary-color: rgb(140, 17, 39);
   --secondary-color: #a62626;
-  --primary-color-dark: hsl(218, 15.4%, 10.2%);
+}
+
+.dark-theme{
+  --primary-color: hsl(218, 15.4%, 10.2%);
+  --secondary-color: #190a0a;
 }
 
 * {
@@ -49,6 +53,19 @@ header h2 {
   display: grid;
   place-items: center;
 }
+
+.theme-btn{
+  display: flex;
+  max-width: 100%;
+  padding: 10px 30px;
+  justify-content: flex-end;
+}
+
+#icon{
+  width: 30px;
+  cursor: pointer;
+
+  }
 
 .search {
   background-color: transparent;
@@ -283,6 +300,7 @@ p.text {
   width: 100%;
   text-align: center;
   margin: 10px auto;
+  color: white;
 }
 
 p.text span {

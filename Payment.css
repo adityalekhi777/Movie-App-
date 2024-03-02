@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
 
+
+
 *{
   margin:0; padding:0;
   box-sizing: border-box;
@@ -8,20 +10,35 @@
   transition: all .2s linear;
 }
 
+:root {
+  --primary-color: rgb(140, 17, 39);
+  --secondary-color: #a62626;
+  --white:#ffffff;
+  --text:#000000;
+}
+
+.dark-theme{
+  --primary-color: hsl(218, 15.4%, 10.2%);
+  --secondary-color: #190a0a;
+  --white:#190a0a;
+  --text:#cbcaca;
+}
+
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
   padding:25px;
   min-height: 100vh;
-  background-image: linear-gradient(rgb(95, 40, 40), rgb(206, 49, 49));
+  background-image: linear-gradient(var(--primary-color),--secondary-color);
 }
 
 .container form{
   padding:20px;
   width:700px;
-  background: #fff;
+  background: var(--white);
   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: var(--text);
 }
 
 .container form .row{
@@ -36,7 +53,6 @@
 
 .container form .row .col .title{
   font-size: 20px;
-  color:#333;
   padding-bottom: 5px;
   text-transform: uppercase;
 }
